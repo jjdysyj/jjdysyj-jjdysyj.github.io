@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="./css/1.css" />
+	</head>
+	<body>
+		<div class="dhl">
+			<ul>
+				<li><a href="./1主页.html">首页</a></li>
+				<li><a href="./2人物介绍.html">人物介绍</a></li>
+				<li><a href="./3颠倒王国.html" class="dd">颠倒王国</a></li>
+				<li><a href="./4同人专区.html">同人专区</a></li>
+				<li><a href="./5作者介绍.html">作者介绍</a></li>
+			</ul>
+		</div>
+		<!-- 大盒子 -->
+		<div class="box">
+			<!-- 左侧按钮 -->
+			<a href="javascript:;" class="left"></a>
+			<!-- 右侧按钮 -->
+			<a href="javascript:;" class="right"></a>
+			<!-- 轮播图片 -->
+			<ul class="imgs">
+				<li class="one">
+					<a href="#">
+						<img src="./img/4488EEE2B04668D0FBDAE2631C9D13E1.jpg">
+					</a>
+				</li>
+				<li class="two">
+					<a href="#">
+						<img src="./img/349025C3414F5361FA7B5867BDCAC097.jpg">
+					</a>
+				</li>
+				<li class="three">
+					<a href="#"><img src="./img/1007D5EA7852AB81713F175185FA3F85.jpg" alt=""></a>
+				</li>
+				<li class="four">
+					<a href="#"><img src="./img/E87B7EB0B8A4796CD943DBE4A7ADDE24.jpg">
+
+					</a>
+				</li>
+				<li class="five">
+					<a href="#"><img src="./img/0B63350F66B6A700D0BBBCE5222D58C7.jpg" alt=""></a>
+				</li>
+				<li class="six">
+					<a href="#"><img src="./img/2A3099B50F76CA4FF1630D53E038F919.jpg">
+
+					</a>
+				</li>
+			</ul>
+			<ul class="list">
+			</ul>
+			<div class="rights"></div>
+			<div class="lefts"></div>
+		</div>
+		<div class="ym">
+			<h3>作品介绍</h3>
+		</div>
+		<div class="yma">
+			<div class="dybf">
+				<div class="wzjs">
+					<p>《颠倒天空》主要讲述了以下故事：现实中的玩家露珠因神秘力量穿越进游戏世界“颠倒王国”，成为一名光崽，还被女神预言是来自异世界的英雄.<br />
+
+						在颠倒王国中，露珠结识了许多性格各异的伙伴，如活泼可爱的天才光崽雨点、高冷稳重的留影哥哥、自信跳脱的颠倒第一帅哥闪光、热情反差钟爱人类的病娇光崽红织、神秘强大的颠倒王国第一女神破星、严厉的雨林最强导师枯叶等.<br />
+
+						之后，露珠与伙伴们一起在颠倒王国展开冒险，共同面对各种挑战和困难，在并肩作战、相互扶持的过程中，他们逐渐加深了对彼此的了解和信任，也收获了成长.
+					</p>
+				</div>
+				<div class="tp"><img src="./img/BA390B80A275F445A4C35D1BDF4A9BB9.jpg" alt="" /></div>
+			</div>
+		</div>
+		<div class="jsdt">
+			<h3>主角大头照</h3>
+		</div>
+		<div class="dtz">
+			<ul>
+				<li>
+					<div class="t">
+						<img src="./img/1e3ad5702d935989c11ae45f97421232.png" alt="" />
+					</div>
+					<div class="z">
+						<p>留影</p>
+					</div>
+				</li>
+				<li>
+					<div class="t">
+						<img src="./img/84e5a0977297523a52e6bd6c21f5b269.png" alt="" />
+					</div>
+					<div class="z">
+						<p>雨点</p>
+					</div>
+				</li>
+				<li>
+					<div class="t">
+						<img src="./img/b4c540fde516641d14d89105ea3fae1c.png" alt="" />
+					</div>
+					<div class="z">
+						<p>露珠</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="jw"><p>本页图片来源：小娜 / 若栗 / 秘书-方糖 / 烧纸 </p><p>感谢各位老师</p></div>
+		<script>
+			window.addEventListener('load', function() {
+				//获取元素
+				var leftb = document.querySelector('.left');
+				var rightb = document.querySelector('.right');
+				var box = document.querySelector('.box');
+				var imgs = box.querySelector('.imgs');
+				var imgt = imgs.querySelectorAll('li');
+				//自动翻页函数
+				var timeone = setInterval(function() {
+					rightf();
+				}, 1000);
+				//左右按钮的出现
+				box.addEventListener('mouseover', function() {
+					leftb.style.display = 'block';
+					rightb.style.display = 'block';
+					//移入时清除定时器
+					clearInterval(timeone);
+					timeone = null;
+				})
+
+				//左右按钮的消失
+				box.addEventListener('mouseout', function() {
+					leftb.style.display = 'none';
+					rightb.style.display = 'none';
+					//恢复定时器
+					clearInterval(timeone);
+					timeone = setInterval(function() {
+						rightf();
+					}, 1000)
+				})
+				//动态生成小圆圈，小圈圈模块
+				var list = box.querySelector('.list');
+				for (var i = 0; i < imgs.children.length; i++) {
+					//创建li，加入ul中
+					var li = document.createElement('li');
+					list.appendChild(li);
+					//给小圈圈添加类名
+					li.setAttribute('index', i);
+					//排他思想，实现点击小圆圈，变色
+					li.addEventListener('click', colors);
+					//经过小圆圈，切换图片
+					li.addEventListener('mouseenter', jump);
+				}
+				//一开始第二个亮
+				list.children[1].className = 'change';
+				//变色函数 
+				function colors() {
+					//把所有的小圆圈变白
+					for (var i = 0; i < list.children.length; i++) {
+						list.children[i].className = '';
+					}
+					//给图片对应的小圆圈上色
+					var index = this.getAttribute('index');
+					list.children[index].className = 'change';
+				}
+				//跳转函数
+				function jump() {
+					var index = this.getAttribute('index');
+					var now = num.indexOf('two');
+					//计算经过点与当前点的距离
+					var dif = Math.max(index, now) - Math.min(index, now);
+					// console.log(dis);
+					if (index > now) {
+						while (dif--) {
+							rightf();
+						}
+					} else {
+						while (dif--) {
+							leftf();
+						}
+					}
+				}
+				//小圆圈跟随着图片移动
+				var j = 1;
+
+				function colort() {
+					for (var i = 0; i < list.children.length; i++) {
+						list.children[i].className = '';
+					}
+					if (j >= 6) {
+						j = 0;
+					} else if (j < 0) {
+						j = 5;
+					}
+					list.children[j].className = 'change';
+				}
+				//翻页模块
+				var num = ['one', 'two', 'three', 'four', 'five', 'six'];
+				//右翻页
+				rightb.addEventListener('click', rightf);
+
+				function rightf() {
+					//把数组的最后一个添加到第一个
+					num.unshift(num[5]);
+					//删除最后一个
+					num.pop();
+					//重新给li添加类名
+					for (var i = 0; i < num.length; i++) {
+						imgt[i].setAttribute('class', num[i]);
+					}
+					//通过这个全局变量来让小圆圈的颜色一起变化
+					j++;
+					colort();
+				}
+				//左翻页
+				leftb.addEventListener('click', leftf)
+
+				function leftf() {
+					num.push(num[0]);
+					num.shift();
+					for (var i = 0; i < num.length; i++) {
+						imgt[i].setAttribute('class', num[i]);
+					}
+					j--;
+					colort();
+				}
+				//点击图片实现翻页,这里我是通过在左右两边添加一个盒子来实现的
+				var rights = document.querySelector('.rights');
+				rights.addEventListener('click', function() {
+					rightf();
+				})
+				var lefts = document.querySelector('.lefts');
+				lefts.addEventListener('click', function() {
+					leftf();
+				})
+			})
+		</script>
+
+	</body>
+</html>

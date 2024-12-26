@@ -1,0 +1,363 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-image: url(../img/7949AE2B27EE867195BF6F01000ACBD9.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+}
+
+.two img {
+	background-size: cover;
+}
+
+.dhl {
+	margin: 0 auto;
+	width: 1000px;
+	height: 50px;
+	line-height: 50px;
+	background-color: #aed2d8;
+	border-radius: 5px;
+}
+
+.dhl ul {
+	display: flex;
+	justify-content: space-around
+}
+
+.dhl li {
+	text-align: center;
+	width: 150px;
+	height: 50px;
+}
+
+.dhl li:hover {
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+.dhl li a {
+	font-size: 20px;
+	font-weight: 600;
+	font-family: "仿宋";
+	color: #fff;
+}
+
+.dhl li:hover a {
+	color: #00bdff;
+}
+
+.dhl .dd {
+	letter-spacing: 3px;
+	font-style: italic;
+	font-size: 28px;
+	background-image: linear-gradient(103.3deg, rgb(118, 172, 255)30%, rgb(108, 165, 255)55.7%, rgb(0, 122, 161)81.8%);
+	color: transparent;
+	-webkit-background-clip: text;
+}
+
+.box {
+	position: relative;
+	width: 920px;
+	height: 400px;
+	/* 居中 */
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 20%);
+}
+
+.imgs {
+	position: absolute;
+	width: 680px;
+	height: 400px;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0%);
+}
+
+/* 让图片都叠在一起 */
+.imgs li {
+	position: absolute;
+	width: 680px;
+	height: 360;
+	transition: 0.5s;
+}
+
+.imgs img {
+	object-fit: cover;
+	position: absolute;
+	width: 680px;
+	height: 400px;
+	border-radius: 20px;
+
+}
+
+.imgs .innerImg {
+	width: 200px;
+	height: 100px;
+	margin-left: 250px;
+	margin-top: 50px;
+	box-shadow: 2px 2px 5px rgb(204, 223, 31);
+}
+
+/* 给左右按钮设计样式，和定位 */
+.box .left {
+	position: absolute;
+	font-size: 24px;
+	color: white;
+	width: 400px;
+	height: 400px;
+	line-height: 36px;
+	text-align: center;
+	background-color: black;
+	/* 添加半透明 */
+	opacity: 0;
+	left: 10px;
+	z-index: 999;
+}
+
+.box .right {
+	position: absolute;
+	font-size: 24px;
+	color: white;
+	width: 400px;
+	height: 400px;
+	line-height: 36px;
+	text-align: center;
+	background-color: black;
+	/* 添加半透明 */
+	opacity: 0;
+	right: 10px;
+	z-index: 999;
+}
+
+/* 把图片错开 */
+.imgs .one {
+	transform: translateX(-150px) scale(0.9);
+	z-index: 1;
+}
+
+/* 第二张图片在中间，层级最高 */
+.imgs .two {
+	z-index: 2;
+}
+
+.imgs .three {
+	transform: translateX(150px) scale(0.9);
+	z-index: 1;
+}
+
+/* 刚开始不显示的图片就放在中间图片的下面 */
+.imgs .four {
+	transform: scale(0.9);
+}
+
+.imgs .five {
+	transform: scale(0.9);
+}
+
+.imgs .six {
+	transform: scale(0.9);
+}
+
+.twoInnerWords {
+	position: absolute;
+	top: 130px;
+	left: 50%;
+	margin-left: -60px;
+	font-size: 20px;
+	color: black;
+}
+
+.imgInnerWords {
+	position: absolute;
+	width: 500px;
+	height: 80px;
+	margin-left: 90px;
+	margin-top: 60px;
+	padding-top: 10px;
+	border: 2px solid #888;
+	background-color: rgba(241, 218, 148, 0.315);
+	color: black;
+}
+
+.topWords {
+	line-height: 30px;
+	width: 90px;
+	margin-left: 200px;
+	background-color: rgba(233, 226, 127, 0.575);
+	text-align: center;
+}
+
+.bottomWords {
+	line-height: 30px;
+	margin: 5px 0 0 130px;
+}
+
+/* 设计小圆圈 */
+/* 定位 */
+.list {
+	position: absolute;
+	bottom: -25px;
+	left: 50%;
+	margin-left: -81px;
+	z-index: 777;
+}
+
+/* 设计样式 */
+.list li {
+	float: left;
+	width: 15px;
+	height: 15px;
+	background-color: rgb(230, 230, 230);
+	border-radius: 50%;
+	margin: 0 6px;
+	cursor: pointer;
+}
+
+/* 小圆圈改变后的样式 */
+.list .change {
+	background-color: #00bdff;
+}
+
+/* 左右两边各一个盒子 */
+.rights {
+	position: absolute;
+	right: 0;
+	bottom: 30px;
+	height: 255.5px;
+	width: 100px;
+}
+
+.lefts {
+	position: absolute;
+	left: 0;
+	bottom: 14px;
+	height: 255.5px;
+	width: 100px;
+}
+
+
+
+
+.ym {
+	padding: 0 50px;
+	margin: 0 auto;
+	width: 1000px;
+	height: 50px;
+	line-height: 50px;
+	background-color: #aed2d8;
+	margin-top: 150px;
+	border-radius: 20px;
+}
+
+.ym h3 {
+	font-family: "仿宋";
+	font-size: 25px;
+	color: #fff;
+}
+
+.yma {
+	padding: 15px;
+	margin: 0 auto;
+	width: 1000px;
+	height: 340px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dybf {
+	display: flex;
+	justify-content: space-between;
+}
+
+.wzjs {
+	width: 760px;
+	height: 300px;
+}
+
+.wzjs p {
+	font-size: 22px;
+	font-family: "宋体";
+	line-height: 35px;
+}
+
+.tp {
+	margin: 0 auto;
+	width: 170px;
+	height: 300px;
+}
+
+.tp img {
+	height: 300px;
+	width: 170px;
+}
+
+.jsdt {
+	padding: 0 50px;
+	margin: 0 auto;
+	width: 1000px;
+	height: 50px;
+	line-height: 50px;
+	background-color: #aed2d8;
+	margin-top: 20px;
+	border-radius: 20px;
+}
+
+.jsdt h3 {
+	font-family: "仿宋";
+	font-size: 25px;
+	color: #fff;
+}
+
+.dtz {
+	margin: 0 auto;
+	width: 1000px;
+	height: 300px;
+}
+
+.dtz ul {
+	display: flex;
+	justify-content: space-around;
+}
+
+.dtz ul li {
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+}
+.dtz ul li .t img {
+	width: 300px;
+	height: 300px;
+	object-fit: cover;
+}
+.z {
+	text-align: center;
+	width: 270px;
+	height: 100px;
+	font-size: 30px;
+	color: #888;
+	transition: all 0.5s;
+}
+.dtz ul li:hover .z {
+	transform: translateY(-50px);
+}
+.jw{
+padding: 20px;
+	text-align: center;
+	margin: 50px auto 0;
+	width: 100%;
+	height: 80px;
+	background-color: #aed2d8;
+}
